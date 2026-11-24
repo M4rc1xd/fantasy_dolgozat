@@ -10,6 +10,7 @@ namespace fantasy_dolgozat
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("asd");
         }
     }
 }
