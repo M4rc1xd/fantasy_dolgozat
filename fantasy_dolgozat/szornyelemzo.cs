@@ -38,5 +38,20 @@ namespace fantasy_dolgozat
         {
             return szornyek.Any(x => x.Elohely.ToLower().Contains("víz") && x.VeszelyessegiSzint < 4);
         }
+
+        public IEnumerable<string> SzornyekSzamaZsakmanyonkent()
+        {
+            return szornyek
+                .GroupBy(x => x.LeggyakoribbZsakmany)
+                .Select(g => $"{g.Key}: {g.Count()}");
+        }
+
+        public IEnumerable<string> LegveszelyesebbElohelyek()
+        {
+            return szornyek
+                .Where(x => x.VeszelyessegiSzint >= 7)
+                .Select(x => x.Elohely)
+                .Distinct();
+        }
     }
 }
