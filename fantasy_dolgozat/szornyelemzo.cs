@@ -29,9 +29,9 @@ namespace fantasy_dolgozat
             return szornyek.Min(x => x.VeszelyessegiSzint);
         }
 
-        public IEnumerable<Szorny> NemVeszelyesSzornyek()
+        public IEnumerable<szorny> NemVeszelyesSzornyek()
         {
-            return szornyek.Where(x => !x.VeszelyesE).sortBy(x => x.Nev);
+            return szornyek.Where(x => !x.VeszelyesE).OrderBy(x => x.Nev);
         }
 
         public bool VanVizGyengeVeszelyesSzorny()
