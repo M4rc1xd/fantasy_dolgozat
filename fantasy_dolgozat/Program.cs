@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using fantasyDolgozat;
 
 namespace fantasy_dolgozat
 {
@@ -10,7 +9,15 @@ namespace fantasy_dolgozat
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("asd");
+            SzornyAdatbazis adatbazis = new SzornyAdatbazis();
+            List<szorny> szornyek = adatbazis.Feltolt();
+
+            var szornyNevek = szornyek.Select(x => x.Nev).ToList();
+
+            foreach (var nev in szornyNevek)
+            {
+                Console.WriteLine(nev);
+            }
         }
     }
 }
